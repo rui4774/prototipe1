@@ -34,19 +34,20 @@ def left5(event):
 def ticke5():
    eye5['text'] = ent5.get()
 
-def clear(object):
-   slaves = object.grid_slaves()
+def clear1(obj):
+   slaves = obj.grid_slaves()
    for x in slaves:
       x.destroy()
 
 # Доска с тасками
 def firstpage():
-   clear(win)
+   clear1(win)
    win.title('Доска с тасками')
    win.geometry('600x400+150+100')
    win.resizable(False, False)
    ttk.Style().theme_use('clam')
    win.iconphoto(False, pic2)
+   frame = Frame(mframe, bg='white', width=500, height=400)
    mframe1 = Frame(mframe, bg='white')
    mframe1.rowconfigure(index=6, weight=1)
    mframe1.columnconfigure(index=2, weight=1)
@@ -120,13 +121,15 @@ def firstpage():
 
 # Логин
 def secondpage():
-   clear(win)
+   clear1(win)
    win.title('Аккаунт')
    win.geometry('600x400+150+100')
    win.resizable(False, False)
    ttk.Style().theme_use('clam')
    win.iconphoto(False, pic2)
 
+   frame = Frame(mframe, bg='white', width=500, height=400)
+   frame.place(x=0, y=0)
    log2 = Label(mframe, image=login1)
    log2.place(x=150, y=50)
    log = Label(mframe, text='LOGIN', font='codicon', fg='red', bg='white')
@@ -141,7 +144,6 @@ def secondpage():
    mframe.pack(side=tk.RIGHT)
    mframe.pack_propagate(False)
    mframe.config(width=500, height=400)
-
 
 # window
 win = Tk()
