@@ -41,13 +41,11 @@ def clear(object):
 
 # Доска с тасками
 def firstpage():
-   clear(mframe)
    clear(win)
    win.title('Доска с тасками')
    win.geometry('600x400+150+100')
    win.resizable(False, False)
    ttk.Style().theme_use('clam')
-   pic2 = PhotoImage(file='logo.png')
    win.iconphoto(False, pic2)
    mframe1 = Frame(mframe, bg='white')
    mframe1.rowconfigure(index=6, weight=1)
@@ -56,21 +54,9 @@ def firstpage():
    mframe2.rowconfigure(index=6, weight=1)
 
    # global
-   global tic1
-   global tic2
-   global tic3
-   global tic4
-   global tic5
-   global ent1
-   global ent2
-   global ent3
-   global ent4
-   global ent5
-   global eye1
-   global eye2
-   global eye3
-   global eye4
-   global eye5
+   global tic1, tic2, tic3, tic4, tic5
+   global ent1, ent2, ent3, ent4, ent5
+   global eye1, eye2, eye3, eye4, eye5
 
    lbl2 = Label(mframe1, text='Не выполнены', bg='#ADD8E6')
    lbl2.grid(column=2, row=1)
@@ -134,17 +120,17 @@ def firstpage():
 
 # Логин
 def secondpage():
-   clear(mframe)
    clear(win)
    win.title('Аккаунт')
    win.geometry('600x400+150+100')
    win.resizable(False, False)
    ttk.Style().theme_use('clam')
-   pic2 = PhotoImage(file='logo.png')
    win.iconphoto(False, pic2)
 
+   log2 = Label(mframe, image=login1)
+   log2.place(x=150, y=50)
    log = Label(mframe, text='LOGIN', font='codicon', fg='red', bg='white')
-   log.place(x=200, y=80)
+   log.place(x=270, y=130)
    login = ttk.Entry(mframe)
    login.place(x=150, y=170, width=200)
    password = ttk.Entry(mframe)
@@ -174,6 +160,7 @@ ttk.Style().configure('my.TButton', font=font1, background='#4169E1', foreground
 pic1 = PhotoImage(file='cifra1.png')
 tick1 = PhotoImage(file='tick1.png')
 tick2 = PhotoImage(file='tick2.png')
+login1 = PhotoImage(file='login1.png')
 
 # notebook
 notebook = ttk.Notebook()
